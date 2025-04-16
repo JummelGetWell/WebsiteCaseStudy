@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University GSO - Request History</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i>📚</i> University GSO Borrower Portal
+            </div>
+            <nav>
+                <a href="user.html">Home</a>
+                <a href="browse-items.html">Browse Items</a>
+                <a href="my-borrowings.html">My Borrowings</a>
+                <a href="#" class="active">Request History</a>
+                <a href="help.html">Help</a>
+            </nav>
+            <div class="user-info">
+                <img src="/api/placeholder/32/32" alt="User avatar">
+                <span>John Student</span>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-header">
+                <div class="card-title">Request History</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 1rem; align-items: center;">
+                <div class="search-bar" style="flex-grow: 1; max-width: 500px;">
+                    <i>🔍</i>
+                    <input type="text" placeholder="Search by item name, date, or status...">
+                </div>
+                <div>
+                    <select class="form-control" style="display: inline-block; width: auto; margin-left: 0.5rem;">
+                        <option>All Time</option>
+                        <option>Last 30 Days</option>
+                        <option>Last 3 Months</option>
+                        <option>Last 6 Months</option>
+                        <option>This Year</option>
+                    </select>
+                    <select class="form-control" style="display: inline-block; width: auto; margin-left: 0.5rem;">
+                        <option>All Statuses</option>
+                        <option>Approved</option>
+                        <option>Denied</option>
+                        <option>Completed</option>
+                        <option>Cancelled</option>
+                    </select>
+                    <button class="btn btn-secondary">Export</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="my-items">
+            <div class="section-header">
+                <div class="section-title">Past Borrowing Requests</div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Request Date</th>
+                        <th>Borrowing Period</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+        </div>
+        
+        <div class="pagination" style="justify-content: center; margin-top: 2rem;">
+            <button>←</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>→</button>
+        </div>
+    </main>
+    
+    <!-- History Details Modal -->
+    <div class="modal" id="historyDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Request Details</h3>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="item-details">
+                    <div style="display: flex; margin-bottom: 1.5rem;">
+                        <div style="font-size: 4rem; margin-right: 1.5rem; background: var(--light-gray); width: 100px; height: 100px; display: flex; justify-content: center; align-items: center; border-radius: 8px;">
+                            📷
+                        </div>
+                        <div>
+                            <h3 id="historyItemName" style="margin-bottom: 0.5rem;">Digital Camera</h3>
+                            <p style="color: var(--dark-gray); margin-bottom: 0.25rem;">Electronics</p>
+                            <p style="color: var(--dark-gray); margin-bottom: 0.5rem;">Asset ID: INV-078</p>
+                            <span class="status status-completed">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">Request Information</h4>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Request Date:</strong> March 25, 2025</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Approved Date:</strong> March 26, 2025</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Borrowing Period:</strong> March 28 - April 4, 2025</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Returned:</strong> April 4, 2025</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Department:</strong> Media Studies</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Purpose:</strong> Photography project for MEDIA301</li>
+                    </ul>
+                    
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">Staff Notes</h4>
+                    <p style="margin-bottom: 1rem;">Return condition: Excellent. All accessories returned. Battery charged.</p>
+                    
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">Timeline</h4>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.5rem; display: flex;">
+                            <div style="min-width: 150px;"><strong>Mar 25, 2025</strong></div>
+                            <div>Request submitted</div>
+                        </li>
+                        <li style="margin-bottom: 0.5rem; display: flex;">
+                            <div style="min-width: 150px;"><strong>Mar 26, 2025</strong></div>
+                            <div>Request approved by GSO Staff</div>
+                        </li>
+                        <li style="margin-bottom: 0.5rem; display: flex;">
+                            <div style="min-width: 150px;"><strong>Mar 28, 2025</strong></div>
+                            <div>Item checked out from Main GSO Office</div>
+                        </li>
+                        <li style="margin-bottom: 0.5rem; display: flex;">
+                            <div style="min-width: 150px;"><strong>Apr 04, 2025</strong></div>
+                            <div>Item returned to Main GSO Office</div>
+                        </li>
+                        <li style="margin-bottom: 0.5rem; display: flex;">
+                            <div style="min-width: 150px;"><strong>Apr 04, 2025</strong></div>
+                            <div>Return processed - Request completed</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-cancel">Close</button>
+                <button class="btn btn-primary" onclick="showRequestAgain('Digital Camera')">Request Again</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Request Again Modal -->
+    <div class="modal" id="requestAgainModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Request Item Again</h3>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Item</label>
+                    <input type="text" class="form-control" id="requestAgainItemName" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Borrower Information</label>
+                    <input type="text" class="form-control" value="John Student - #12345" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Department/Organization</label>
+                    <input type="text" class="form-control" placeholder="Enter your department or organization" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Purpose</label>
+                    <textarea class="form-control" rows="3" placeholder="Explain why you need this item" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Request Date</label>
+                    <input type="date" class="form-control" value="2025-04-16" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Needed From</label>
+                    <input type="date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Needed Until</label>
+                    <input type="date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Additional Notes</label>
+                    <textarea class="form-control" rows="2" placeholder="Any additional information about your request"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-cancel">Cancel</button>
+                <button class="btn btn-primary">Submit Request</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Show history details modal
+        function showHistoryDetails(itemName) {
+            document.getElementById('historyItemName').textContent = itemName;
+            document.getElementById('historyDetailsModal').style.display = 'flex';
+        }
+        
+        // Show request again modal
+        function showRequestAgain(itemName) {
+            document.getElementById('requestAgainItemName').value = itemName;
+            document.getElementById('requestAgainModal').style.display = 'flex';
+            // Close details modal if open
+            document.getElementById('historyDetailsModal').style.display = 'none';
+        }
+        
+        // Close modals
+        document.querySelectorAll('.close-button, .modal-cancel').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.modal').style.display = 'none';
+            });
+        });
+        
+        // Close modal when clicking outside content
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

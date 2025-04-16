@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University GSO - Browse Items</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i>📚</i> University GSO Borrower Portal
+            </div>
+            <nav>
+                <a href="user.html">Home</a>
+                <a href="#" class="active">Browse Items</a>
+                <a href="my-borrowings.html">My Borrowings</a>
+                <a href="request-history.html">Request History</a>
+                <a href="help.html">Help</a>
+            </nav>
+            <div class="user-info">
+                <img src="/api/placeholder/32/32" alt="User avatar">
+                <span>John Student</span>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-header">
+                <div class="card-title">Browse All Available Items</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 1rem; align-items: center;">
+                <div class="search-bar" style="flex-grow: 1; max-width: 500px;">
+                    <i>🔍</i>
+                    <input type="text" placeholder="Search by name, category, or ID...">
+                </div>
+                <div>
+                    <button class="btn btn-secondary">Filters</button>
+                    <select class="form-control" style="display: inline-block; width: auto; margin-left: 0.5rem;">
+                        <option>All Categories</option>
+                        <option>Electronics</option>
+                        <option>Audio Visual</option>
+                        <option>Furniture</option>
+                        <option>Sports Equipment</option>
+                        <option>Lab Equipment</option>
+                        <option>Event Supplies</option>
+                    </select>
+                    <select class="form-control" style="display: inline-block; width: auto; margin-left: 0.5rem;">
+                        <option>Sort by: Relevance</option>
+                        <option>Name (A-Z)</option>
+                        <option>Name (Z-A)</option>
+                        <option>Availability</option>
+                        <option>Most Popular</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="item-grid">
+            <div class="item-card">
+                <div class="item-image">💻</div>
+                <div class="item-info">
+                    <div class="item-name">Dell Laptop</div>
+                    <div class="item-category">Electronics</div>
+                    <div class="item-availability">
+                        <span class="available-tag">Available</span>
+                        <button class="btn btn-primary" onclick="showRequestModal('Dell Laptop')">Request</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-image">🖥️</div>
+                <div class="item-info">
+                    <div class="item-name">Desktop Computer</div>
+                    <div class="item-category">Electronics</div>
+                    <div class="item-availability">
+                        <span class="available-tag">Available</span>
+                        <button class="btn btn-primary" onclick="showRequestModal('Desktop Computer')">Request</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-image">📹</div>
+                <div class="item-info">
+                    <div class="item-name">Video Camera</div>
+                    <div class="item-category">Electronics</div>
+                    <div class="item-availability">
+                        <span class="available-tag">Available</span>
+                        <button class="btn btn-primary" onclick="showRequestModal('Video Camera')">Request</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-image">🔊</div>
+                <div class="item-info">
+                    <div class="item-name">Bluetooth Speaker</div>
+                    <div class="item-category">Electronics</div>
+                    <div class="item-availability">
+                        <span class="available-tag">Available</span>
+                        <button class="btn btn-primary" onclick="showRequestModal('Bluetooth Speaker')">Request</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-image">📽️</div>
+                <div class="item-info">
+                    <div class="item-name">Projector</div>
+                    <div class="item-category">Electronics</div>
+                    <div class="item-availability">
+                        <span class="available-tag">Available</span>
+                        <button class="btn btn-primary" onclick="showRequestModal('Projector')">Request</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-image">🎤</div>
+                <div class="item-info">
+                    <div class="item-name">Wireless Microphone</div>
+                    <div class="item-category">Electronics</div>
+                    <div class="item-availability">
+                        <span class="available-tag">Available</span>
+                        <button class="btn btn-primary" onclick="showRequestModal('Wireless Microphone')">Request</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-image">🎸</div>
+                <div class="item-info">
+                    <div class="item-name">Acoustic Guitar</div>
+                    <div class="item-category">Music Equipment</div>
+                    <div class="item-availability">
+                        <span class="available-tag">Available</span>
+                        <button class="btn btn-primary" onclick="showRequestModal('Acoustic Guitar')">Request</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-image">📱</div>
+                <div class="item-info">
+                    <div class="item-name">iPad Pro</div>
+                    <div class="item-category">Electronics</div>
+                    <div class="item-availability">
+                        <span class="status status-borrowed">Borrowed</span>
+                        <button class="btn btn-secondary" disabled>Request</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-image">🏈</div>
+                <div class="item-info">
+                    <div class="item-name">Football Set</div>
+                    <div class="item-category">Sports Equipment</div>
+                    <div class="item-availability">
+                        <span class="available-tag">Available</span>
+                        <button class="btn btn-primary" onclick="showRequestModal('Football Set')">Request</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-image">⛺</div>
+                <div class="item-info">
+                    <div class="item-name">Event Tent</div>
+                    <div class="item-category">Event Supplies</div>
+                    <div class="item-availability">
+                        <span class="status status-borrowed">Borrowed</span>
+                        <button class="btn btn-secondary" disabled>Request</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-image">🔬</div>
+                <div class="item-info">
+                    <div class="item-name">Microscope</div>
+                    <div class="item-category">Lab Equipment</div>
+                    <div class="item-availability">
+                        <span class="available-tag">Available</span>
+                        <button class="btn btn-primary" onclick="showRequestModal('Microscope')">Request</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-image">🪑</div>
+                <div class="item-info">
+                    <div class="item-name">Folding Chair Set</div>
+                    <div class="item-category">Furniture</div>
+                    <div class="item-availability">
+                        <span class="available-tag">Available</span>
+                        <button class="btn btn-primary" onclick="showRequestModal('Folding Chair Set')">Request</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pagination" style="justify-content: center; margin-top: 2rem;">
+            <button>←</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>→</button>
+        </div>
+    </main>
+    
+    <!-- Request Modal -->
+    <div class="modal" id="requestModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Request Item</h3>
+                <button class="close-button" id="closeRequestModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Item</label>
+                    <input type="text" class="form-control" id="requestItemName" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Borrower Information</label>
+                    <input type="text" class="form-control" value="John Student - #12345" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contact Information</label>
+                    <input type="text" class="form-control" value="john.student@university.edu" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Department/Organization</label>
+                    <input type="text" class="form-control" placeholder="Enter your department or organization" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Purpose</label>
+                    <textarea class="form-control" rows="3" placeholder="Explain why you need this item" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Request Date</label>
+                    <input type="date" class="form-control" value="2025-04-13" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Needed From</label>
+                    <input type="date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Needed Until</label>
+                    <input type="date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Additional Notes</label>
+                    <textarea class="form-control" rows="2" placeholder="Any additional information about your request"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelRequestModal">Cancel</button>
+                <button class="btn btn-primary">Submit Request</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Show request modal
+        function showRequestModal(itemName) {
+            document.getElementById('requestItemName').value = itemName;
+            document.getElementById('requestModal').style.display = 'flex';
+        }
+        
+        // Close modals
+        document.querySelectorAll('.close-button').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.modal').style.display = 'none';
+            });
+        });
+        
+        // Cancel request
+        document.getElementById('cancelRequestModal').addEventListener('click', function() {
+            document.getElementById('requestModal').style.display = 'none';
+        });
+        
+        // Close modal when clicking outside content
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

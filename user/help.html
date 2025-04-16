@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University GSO - Help</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i>📚</i> University GSO Borrower Portal
+            </div>
+            <nav>
+                <a href="user.html">Home</a>
+                <a href="browse-items.html">Browse Items</a>
+                <a href="my-borrowings.html">My Borrowings</a>
+                <a href="request-history.html">Request History</a>
+                <a href="#" class="active">Help</a>
+            </nav>
+            <div class="user-info">
+                <img src="/api/placeholder/32/32" alt="User avatar">
+                <span>John Student</span>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="welcome-banner">
+            <h1>Help Center</h1>
+            <p>Welcome to the GSO Borrower Portal help page. Find answers to common questions and learn how to use the system effectively.</p>
+        </div>
+        
+        <div class="help-container" style="display: flex; margin: 2rem 0;">
+            <div class="help-sidebar" style="width: 250px; background: var(--light-gray); padding: 1rem; border-radius: 8px;">
+                <h3>Contents</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#getting-started" class="help-link active">Getting Started</a></li>
+                    <li><a href="#borrowing-process" class="help-link">Borrowing Process</a></li>
+                    <li><a href="#returns" class="help-link">Returns & Extensions</a></li>
+                    <li><a href="#account" class="help-link">Account Management</a></li>
+                    <li><a href="#faqs" class="help-link">FAQs</a></li>
+                    <li><a href="#contact" class="help-link">Contact Support</a></li>
+                </ul>
+                
+                <div style="margin-top: 2rem;">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#borrowing-guide" class="help-link">Borrowing Guide</a></li>
+                        <li><a href="#policies" class="help-link">Policies & Rules</a></li>
+                        <li><a href="#troubleshooting" class="help-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="help-content" style="flex-grow: 1; margin-left: 2rem;">
+                <section id="getting-started" class="help-section">
+                    <h2>Getting Started</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">How to Use the GSO Borrower Portal</div>
+                        </div>
+                        <div class="card-body" style="padding: 1rem;">
+                            <p>The General Service Office (GSO) Borrower Portal allows university students, faculty, and staff to borrow equipment and resources for academic and extracurricular activities.</p>
+                            
+                            <h3>Navigation Overview</h3>
+                            <ul>
+                                <li><strong>Home:</strong> Dashboard with current borrowings, pending requests, and category browsing</li>
+                                <li><strong>Browse Items:</strong> Search and filter all available items by category</li>
+                                <li><strong>My Borrowings:</strong> View and manage your currently borrowed items and pending requests</li>
+                                <li><strong>Request History:</strong> Review past borrowing activities and request items again</li>
+                                <li><strong>Help:</strong> Access guides, FAQs, and support resources (you are here)</li>
+                            </ul>
+                            
+                            <h3>User Account</h3>
+                            <p>Your account is automatically created with your university credentials. Your borrowing history, requests, and account details are linked to your university ID.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="borrowing-process" class="help-section" style="margin-top: 2rem;">
+                    <h2>Borrowing Process</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">How to Request Items</div>
+                        </div>
+                        <div class="card-body" style="padding: 1rem;">
+                            <ol>
+                                <li><strong>Find an Item:</strong> Browse categories or use the search function to find the item you need</li>
+                                <li><strong>Submit a Request:</strong> Click the "Request" button and complete the form with:
+                                    <ul>
+                                        <li>Your department or organization</li>
+                                        <li>Purpose for borrowing</li>
+                                        <li>Dates needed (from and until)</li>
+                                        <li>Any additional notes or requirements</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Approval Process:</strong> GSO staff will review your request, typically within 24-48 hours</li>
+                                <li><strong>Pickup:</strong> Once approved, you can pick up the item from the designated GSO location</li>
+                            </ol>
+                            
+                            <div class="info-box" style="background: #f0f7ff; border-left: 4px solid var(--primary-color); padding: 1rem; margin: 1rem 0; border-radius: 4px;">
+                                <p><strong>Note:</strong> Some high-value or specialized equipment may require additional approval from department heads or faculty advisors.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="returns" class="help-section" style="margin-top: 2rem;">
+                    <h2>Returns & Extensions</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Returning Items & Requesting Extensions</div>
+                        </div>
+                        <div class="card-body" style="padding: 1rem;">
+                            <h3>Returning Items</h3>
+                            <p>All items must be returned by their due date to avoid penalties.</p>
+                            <ol>
+                                <li>Go to "My Borrowings" tab to view your current items</li>
+                                <li>Click the "Return" button next to the item you wish to return</li>
+                                <li>Complete the return form, indicating the return location and item condition</li>
+                                <li>Return the item to the selected location</li>
+                                <li>A GSO staff member will process your return and update the system</li>
+                            </ol>
+                            
+                            <h3>Requesting Extensions</h3>
+                            <p>If you need to keep an item longer than originally requested:</p>
+                            <ol>
+                                <li>Go to "My Borrowings" tab</li>
+                                <li>Click the "Extend" button next to the item</li>
+                                <li>Submit your requested extension date and reason</li>
+                                <li>Wait for GSO approval (check your university email for notifications)</li>
+                            </ol>
+                            
+                            <div class="warning-box" style="background: #fff2f0; border-left: 4px solid #ff4d4f; padding: 1rem; margin: 1rem 0; border-radius: 4px;">
+                                <p><strong>Important:</strong> Extension requests must be submitted at least 24 hours before the due date. Approval depends on whether the item is reserved by another user.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="account" class="help-section" style="margin-top: 2rem;">
+                    <h2>Account Management</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Managing Your Account</div>
+                        </div>
+                        <div class="card-body" style="padding: 1rem;">
+                            <h3>Profile Information</h3>
+                            <p>Your profile is linked to your university account. If you need to update personal information, please contact the university registrar's office.</p>
+                            
+                            <h3>Borrowing Limits</h3>
+                            <p>Default borrowing limits are:</p>
+                            <ul>
+                                <li>Students: Maximum 5 items at once, up to 14 days</li>
+                                <li>Faculty/Staff: Maximum 10 items at once, up to 30 days</li>
+                                <li>Student Organizations: Special limits based on needs and event requirements</li>
+                            </ul>
+                            
+                            <h3>Penalties</h3>
+                            <p>Late returns or damaged items may result in:</p>
+                            <ul>
+                                <li>Temporary suspension of borrowing privileges</li>
+                                <li>Fees for repairs or replacement</li>
+                                <li>Academic holds (in severe cases)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="faqs" class="help-section" style="margin-top: 2rem;">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Common Questions</div>
+                        </div>
+                        <div class="card-body" style="padding: 1rem;">
+                            <div class="faq-item">
+                                <h3>Can I reserve items in advance?</h3>
+                                <p>Yes, you can request items up to 30 days in advance. For special events, you can request up to 90 days in advance with department approval.</p>
+                            </div>
+                            
+                            <div class="faq-item" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--light-gray);">
+                                <h3>What if an item is damaged when I receive it?</h3>
+                                <p>Report any damages immediately upon receiving the item. Take photos if possible and contact the GSO office within 24 hours of pickup.</p>
+                            </div>
+                            
+                            <div class="faq-item" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--light-gray);">
+                                <h3>Can I cancel my request?</h3>
+                                <p>Yes, you can cancel pending requests at any time. Go to "My Borrowings," find the pending request, and click "Cancel."</p>
+                            </div>
+                            
+                            <div class="faq-item" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--light-gray);">
+                                <h3>How do I know if my request is approved?</h3>
+                                <p>You will receive an email notification when your request status changes. You can also check the status in the "My Borrowings" section.</p>
+                            </div>
+                            
+                            <div class="faq-item" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--light-gray);">
+                                <h3>What if I need training to use specialized equipment?</h3>
+                                <p>For specialized equipment, the GSO offers training sessions. You'll be notified if training is required when your request is approved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="borrowing-guide" class="help-section" style="margin-top: 2rem;">
+                    <h2>Borrowing Guide</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Borrowing Tips</div>
+                        </div>
+                        <div class="card-body" style="padding: 1rem;">
+                            <h3>Best Practices</h3>
+                            <ul>
+                                <li><strong>Plan ahead:</strong> Request items at least one week before you need them</li>
+                                <li><strong>Be specific:</strong> Provide detailed information about your purpose and needs</li>
+                                <li><strong>Check accessories:</strong> Verify all components are included during pickup</li>
+                                <li><strong>Return on time:</strong> Return items promptly to avoid penalties and help others</li>
+                            </ul>
+                            
+                            <h3>Common Item Categories</h3>
+                            <ul>
+                                <li><strong>Electronics:</strong> Laptops, tablets, cameras, adapters</li>
+                                <li><strong>Audio Visual:</strong> Projectors, microphones, speakers</li>
+                                <li><strong>Event Supplies:</strong> Tents, tables, chairs, decorations</li>
+                                <li><strong>Sports Equipment:</strong> Balls, nets, training gear</li>
+                                <li><strong>Lab Equipment:</strong> Microscopes, measurement tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="policies" class="help-section" style="margin-top: 2rem;">
+                    <h2>Policies & Rules</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">GSO Borrowing Policies</div>
+                        </div>
+                        <div class="card-body" style="padding: 1rem;">
+                            <h3>General Policies</h3>
+                            <ul>
+                                <li>All borrowers must be current students, faculty, or staff</li>
+                                <li>Items may only be used for university-related activities</li>
+                                <li>Borrowers are responsible for any damages or losses</li>
+                                <li>Personal ID must be presented during pickup</li>
+                                <li>Equipment must be returned in the same condition as received</li>
+                            </ul>
+                            
+                            <h3>Restricted Items</h3>
+                            <p>Some items have additional requirements:</p>
+                            <ul>
+                                <li>High-value equipment requires faculty approval</li>
+                                <li>Vehicles require special training and licensing</li>
+                                <li>Laboratory equipment may require safety certification</li>
+                            </ul>
+                            
+                            <div class="policy-link" style="margin-top: 1rem;">
+                                <a href="#" class="btn btn-secondary">Download Complete Policy Document</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="troubleshooting" class="help-section" style="margin-top: 2rem;">
+                    <h2>Troubleshooting</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Common Issues</div>
+                        </div>
+                        <div class="card-body" style="padding: 1rem;">
+                            <h3>System Access Problems</h3>
+                            <ul>
+                                <li><strong>Can't log in:</strong> Verify your university credentials are current; contact IT Help Desk if issues persist</li>
+                                <li><strong>Missing borrowing history:</strong> Try clearing your browser cache or use a different browser</li>
+                                <li><strong>Request form not submitting:</strong> Check all required fields are completed</li>
+                            </ul>
+                            
+                            <h3>Equipment Issues</h3>
+                            <ul>
+                                <li><strong>Item doesn't work:</strong> Contact GSO immediately for replacement or repair</li>
+                                <li><strong>Missing components:</strong> Take inventory at pickup; report issues within 24 hours</li>
+                                <li><strong>Damage during use:</strong> Report immediately; provide details of the incident</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="contact" class="help-section" style="margin-top: 2rem;">
+                    <h2>Contact Support</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Need Additional Help?</div>
+                        </div>
+                        <div class="card-body" style="padding: 1rem;">
+                            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                                <div style="flex: 1; min-width: 300px;">
+                                    <h3>GSO Office</h3>
+                                    <p><strong>Location:</strong> CIHM Building, 3rd Floor</p>
+                                    <p><strong>Hours:</strong> Monday-Friday, 8:00 AM - 5:00 PM</p>
+                                    <p><strong>Phone:</strong> </p>
+                                    <p><strong>Email:</strong> gso@plpasig.edu.ph</p>
+                                </div>
+                                
+                                <div style="flex: 1; min-width: 300px;">
+                                    <h3>Submit a Support Ticket</h3>
+                                    <div class="form-group">
+                                        <label class="form-label">Subject</label>
+                                        <input type="text" class="form-control" placeholder="Brief description of your issue">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Description</label>
+                                        <textarea class="form-control" rows="4" placeholder="Please provide details about your issue or question"></textarea>
+                                    </div>
+                                    <button class="btn btn-primary">Submit Ticket</button>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 1.5rem;">
+                                <h3>Urgent Issues</h3>
+                                <p>For urgent matters such as damaged equipment that poses a safety risk or serious technical issues:</p>
+                                <div class="warning-box" style="background: #fff2f0; border-left: 4px solid #ff4d4f; padding: 1rem; margin: 0.5rem 0; border-radius: 4px;">
+                                    <p><strong>Emergency Contact:</strong> (555) 123-9999</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        // Toggle active help link
+        document.querySelectorAll('.help-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Remove active class from all links
+                document.querySelectorAll('.help-link').forEach(l => {
+                    l.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Smooth scroll to section
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Highlight active section based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.help-section');
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            if (currentSection) {
+                document.querySelectorAll('.help-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

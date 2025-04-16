@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University GSO - My Borrowings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i>📚</i> University GSO Borrower Portal
+            </div>
+            <nav>
+                <a href="user.html">Home</a>
+                <a href="browse-items.html">Browse Items</a>
+                <a href="#" class="active">My Borrowings</a>
+                <a href="request-history.html">Request History</a>
+                <a href="help.html">Help</a>
+            </nav>
+            <div class="user-info">
+                <img src="/api/placeholder/32/32" alt="User avatar">
+                <span>John Student</span>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="dashboard">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Current Borrowings</div>
+                    <div class="card-icon">📦</div>
+                </div>
+                <div class="stat-value">0</div>
+                <div class="stat-label">Items currently borrowed</div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Pending Requests</div>
+                    <div class="card-icon">⏱️</div>
+                </div>
+                <div class="stat-value">0</div>
+                <div class="stat-label">Items awaiting approval</div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Due Soon</div>
+                    <div class="card-icon">⚠️</div>
+                </div>
+                <div class="stat-value">0</div>
+                <div class="stat-label">Items due within 3 days</div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">History</div>
+                    <div class="card-icon">📋</div>
+                </div>
+                <div class="stat-value">0</div>
+                <div class="stat-label">Total items borrowed</div>
+            </div>
+        </div>
+        
+        <div class="my-items">
+            <div class="section-header">
+                <div class="section-title">Current Borrowings</div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Borrowed Date</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        
+        <div class="my-items">
+            <div class="section-header">
+                <div class="section-title">Pending Requests</div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Request Date</th>
+                        <th>Requested Period</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </main>
+    
+    <!-- Return Item Modal -->
+    <div class="modal" id="returnModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Return Item</h3>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Item</label>
+                    <input type="text" class="form-control" id="returnItemName" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Return Location</label>
+                    <select class="form-control">
+                        <option>Main GSO Office - Admin Building</option>
+                        <option>Engineering Department Drop-off</option>
+                        <option>Library Returns Desk</option>
+                        <option>Science Building Reception</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Condition on Return</label>
+                    <select class="form-control" required>
+                        <option value="">Select condition</option>
+                        <option>Excellent - Like new</option>
+                        <option>Good - Minor wear</option>
+                        <option>Fair - Noticeable wear but functional</option>
+                        <option>Poor - Damaged or not fully functional</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Notes on Item Condition</label>
+                    <textarea class="form-control" rows="3" placeholder="Describe any issues or damage to the item"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-cancel">Cancel</button>
+                <button class="btn btn-primary">Confirm Return</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Extend Borrowing Modal -->
+    <div class="modal" id="extendModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Request Extension</h3>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Item</label>
+                    <input type="text" class="form-control" id="extendItemName" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Current Due Date</label>
+                    <input type="text" class="form-control" id="currentDueDate" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Requested Extension Date</label>
+                    <input type="date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Reason for Extension</label>
+                    <textarea class="form-control" rows="3" placeholder="Please explain why you need an extension" required></textarea>
+                </div>
+                <div class="form-group">
+                    <p class="form-info" style="color: var(--dark-gray); font-size: 0.9rem;">
+                        Note: Extension requests are subject to approval. You will be notified once your request has been reviewed.
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-cancel">Cancel</button>
+                <button class="btn btn-primary">Request Extension</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Item Details Modal -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Item Details</h3>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="item-details">
+                    <div style="display: flex; margin-bottom: 1.5rem;">
+                        <div style="font-size: 4rem; margin-right: 1.5rem; background: var(--light-gray); width: 100px; height: 100px; display: flex; justify-content: center; align-items: center; border-radius: 8px;">
+                            📽️
+                        </div>
+                        <div>
+                            <h3 id="detailItemName" style="margin-bottom: 0.5rem;">Portable Projector</h3>
+                            <p style="color: var(--dark-gray); margin-bottom: 0.25rem;">Electronics</p>
+                            <p style="color: var(--dark-gray); margin-bottom: 0.25rem;">Asset ID: INV-042</p>
+                            <span class="status status-borrowed">Borrowed</span>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">Item Description</h4>
+                    <p style="margin-bottom: 1rem;">EPSON XP-200 Portable Projector. Includes carrying case, power cable, HDMI cable, and wireless presenter.</p>
+                    
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">Borrowing Information</h4>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Borrowed:</strong> April 10, 2025</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Due Date:</strong> April 17, 2025</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Borrower:</strong> John Student (#12345)</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Purpose:</strong> Class presentation in Engineering Building</li>
+                    </ul>
+                    
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">Usage Guidelines</h4>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">- Handle with care and keep away from liquids</li>
+                        <li style="margin-bottom: 0.5rem;">- Allow projector to cool down before packing away</li>
+                        <li style="margin-bottom: 0.5rem;">- Return with all included accessories</li>
+                        <li style="margin-bottom: 0.5rem;">- Report any issues immediately to GSO office</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-cancel">Close</button>
+                <button class="btn btn-primary" onclick="showReturnModal('Portable Projector')">Return Item</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cancel Request Modal -->
+    <div class="modal" id="cancelModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Cancel Request</h3>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Item</label>
+                    <input type="text" class="form-control" id="cancelItemName" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Reason for Cancellation</label>
+                    <select class="form-control">
+                        <option>No longer needed</option>
+                        <option>Found alternative</option>
+                        <option>Event cancelled</option>
+                        <option>Other (please specify)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Additional Comments</label>
+                    <textarea class="form-control" rows="3" placeholder="Additional details about cancellation"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-cancel">Back</button>
+                <button class="btn btn-danger">Confirm Cancellation</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Show return modal
+        function showReturnModal(itemName) {
+            document.getElementById('returnItemName').value = itemName;
+            document.getElementById('returnModal').style.display = 'flex';
+            // Close other modals if open
+            document.getElementById('detailsModal').style.display = 'none';
+        }
+        
+        // Show extend modal
+        function showExtendModal(itemName, dueDate) {
+            document.getElementById('extendItemName').value = itemName;
+            document.getElementById('currentDueDate').value = dueDate;
+            document.getElementById('extendModal').style.display = 'flex';
+        }
+        
+        // Show item details
+        function showItemDetails(itemName) {
+            document.getElementById('detailItemName').textContent = itemName;
+            document.getElementById('detailsModal').style.display = 'flex';
+        }
+        
+        // Show cancel modal
+        function showCancelModal(itemName) {
+            document.getElementById('cancelItemName').value = itemName;
+            document.getElementById('cancelModal').style.display = 'flex';
+        }
+        
+        // Show request details (would be similar to item details but for a pending request)
+        function showRequestDetails(itemName) {
+            alert("Request details for " + itemName + " would be shown here.");
+        }
+        
+        // Close modals
+        document.querySelectorAll('.close-button, .modal-cancel').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.modal').style.display = 'none';
+            });
+        });
+        
+        // Close modal when clicking outside content
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
