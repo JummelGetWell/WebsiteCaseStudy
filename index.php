@@ -31,7 +31,7 @@
     </form>
 
     <br>
-    <p><a href="user/user.php">OR CONTINUE AS GUEST</a></p>
+    <p><a href="user/user.html">OR CONTINUE AS GUEST</a></p>
 
     <?php
         session_start();
