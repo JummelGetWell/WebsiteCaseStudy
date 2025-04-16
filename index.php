@@ -31,9 +31,10 @@
     </form>
 
     <br>
-    <p><a href="user/user.html">OR CONTINUE AS GUEST</a></p>
+    <p><a href="user/user.php">OR CONTINUE AS GUEST</a></p>
 
     <?php
+        session_start();
         if(array_key_exists('Submit', $_POST)) {
             submit();
         }
@@ -59,8 +60,9 @@
             
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    //echo "userID: " . $row["userID"]. " - Name: " . $row["fName"]. "<br>";
-                    echo "<script>window.location.href = 'admin/admin.html';</script>"; // resulting page after login success
+                    //echo "userid: " . $row["userid"]. " - Name: " . $row["lname"]. "<br>";                    
+                    $_SESSION['lname'] = $row["lname"];               
+                    echo "<script>window.location.href = 'admin/admin.php';</script>"; // resulting page after login success
                 }
             } else {
                 //echo "0 results";
