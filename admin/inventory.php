@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if (empty($_SESSION['lname'])){
+        echo "<script>window.location.href = '../403.html';</script>";
+        die();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,12 +21,12 @@
                 <i>📚</i> University GSO Inventory System
             </div>
             <nav>
-                <a href="admin.html">Dashboard</a>
-                <a href="inventory.html" class="active">Inventory</a>
-                <a href="lending.html">Lending</a>
-                <a href="returns.html">Returns</a>
-                <a href="reports.html">Reports</a>
-                <a href="users.html">Users</a>
+                <a href="admin.php">Dashboard</a>
+                <a href="inventory.php" class="active">Inventory</a>
+                <a href="lending.php">Lending</a>
+                <a href="returns.php">Returns</a>
+                <a href="reports.php">Reports</a>
+                <a href="users.php">Users</a>
             </nav>
             <div class="user-info">
                 <img src="/api/placeholder/32/32" alt="User avatar">

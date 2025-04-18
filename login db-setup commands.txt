@@ -1,0 +1,7 @@
+CREATE DATABASE websitecasestudy-main-db
+
+CREATE TABLE admin(
+	userid INT PRIMARY KEY AUTO_INCREMENT,
+	fname VARCHAR(32),
+	lname VARCHAR(32)
+);
